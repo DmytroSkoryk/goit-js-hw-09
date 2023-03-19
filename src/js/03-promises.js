@@ -1,13 +1,16 @@
 import Notiflix from 'notiflix';
 
 const refs = {
+  form: document.querySelector('.form'),
   createBtn: document.querySelector('.form button'),
   inputDelay: document.querySelector('[name="delay"]'),
   inputAmount: document.querySelector('[name="amount"]'),
   inputStep: document.querySelector('[name="step"]'),
 }
 
-refs.createBtn.addEventListener('click', onCreatePromises)
+refs.form.addEventListener('submit', onCreatePromises)
+
+
 
 function onCreatePromises(event) {
   event.preventDefault();
@@ -28,6 +31,7 @@ function onCreatePromises(event) {
     });
   delay += step;
 };
+event.currentTarget.reset()
 };
       
 

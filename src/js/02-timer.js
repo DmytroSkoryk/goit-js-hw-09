@@ -11,6 +11,8 @@ const refs = {
     minutes: document.querySelector('[data-minutes]'),
     seconds: document.querySelector('[data-seconds]'),
 }
+let timerId;
+
 
 refs.timerStyle.style.display = 'flex'
 refs.timerStyle.style.gap = '30px'
@@ -24,7 +26,7 @@ refs.startBtn.disabled = true;
 
 function onClickBtn () {
   timerId = setInterval(() => {
-  const timerTime = Date.parse(refs.input.value) - new Date().getTime();
+  timerTime = Date.parse(refs.input.value) - new Date().getTime();
   convertMs(timerTime);
   }, 1000);
   refs.startBtn.disabled = true;
