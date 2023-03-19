@@ -1,3 +1,4 @@
+"use strict"
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
@@ -26,7 +27,7 @@ refs.startBtn.disabled = true;
 
 function onClickBtn () {
   timerId = setInterval(() => {
-  timerTime = Date.parse(refs.input.value) - new Date().getTime();
+  const timerTime = Date.parse(refs.input.value) - new Date().getTime();
   convertMs(timerTime);
   }, 1000);
   refs.startBtn.disabled = true;

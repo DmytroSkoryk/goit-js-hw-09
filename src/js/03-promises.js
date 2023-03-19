@@ -1,3 +1,4 @@
+"use strict"
 import Notiflix from 'notiflix';
 
 const refs = {
